@@ -1,10 +1,23 @@
-class Solution:
-    def maxSubarraySum(self, arr):
-        max_sum = arr[0]
-        curr_sum = arr[0]
+# class Solution:
+#     def maxSubarraySum(self, arr):
+#         max_sum = arr[0]
+#         curr_sum = arr[0]
         
-        for i in range(1, len(arr)):
-            curr_sum = max(arr[i], curr_sum + arr[i])
-            max_sum = max(max_sum, curr_sum)
+#         for i in range(1, len(arr)):
+#             curr_sum = max(arr[i], curr_sum + arr[i])
+#             max_sum = max(max_sum, curr_sum)
             
+#         return max_sum
+
+
+class Solution(object):
+    def maxSubArray(self, nums):
+        
+        current_sum = 0
+        max_sum = nums[0]
+
+        for x in nums:
+            current_sum = max(x, current_sum + x)
+            max_sum = max(max_sum, current_sum)
+
         return max_sum
